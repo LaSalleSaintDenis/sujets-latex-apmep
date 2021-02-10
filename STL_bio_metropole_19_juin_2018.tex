@@ -1,0 +1,401 @@
+\documentclass[10pt,a4paper,french]{article}
+\usepackage{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage{xspace}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,amstext,makeidx}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage[euler]{textgreek}
+\usepackage{textcomp,enumitem}
+\usepackage[table]{xcolor}
+\usepackage{lscape}
+\usepackage{graphicx}
+%tapuscrit Jean-Claude Souque
+\newcommand{\euro}{\eurologo{}}
+\usepackage{pst-tree,pst-plot,pst-text,pst-eucl,pst-bar,pst-func,pst-math,pstricks-add}
+\usepackage[squaren, Gray, cdot]{SIunits}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\usepackage[left=3.5cm, right=3.5cm, top=3cm, bottom=3cm]{geometry}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O}~;~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\makeatletter
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline}
+\makeatother
+
+\usepackage[dvips]{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Baccalauréat STL biotechnologies},
+pdftitle = {Métropole - 19 juin 2018 },
+allbordercolors = white,
+pdfstartview=FitH}
+
+\usepackage[np]{numprint}
+\renewcommand\arraystretch{1.2}
+\newcommand{\e}{\text{e}}
+\frenchbsetup{StandardLists=true}
+\begin{document}
+\setlength\parindent{0mm}
+
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Baccalauréat  Sciences et Technologies de laboratoire (STL)spécialité Biotechnologies}
+\lfoot{\small{Métropole--La Réunion}}
+\rfoot{\small{19 juin 2018}}
+%\renewcommand \footrulewidth{.2pt}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\begin{center}{\Large \textbf{\decofourleft~Baccalauréat STL spécialité biotechnologies  ~\decofourright\\[5pt]Métropole--La Réunion 19 juin 2018}}
+\end{center}
+
+\vspace{0,25cm}
+ 
+\textbf{\textsc{Exercice 1} \hfill 4 points}  
+
+\vspace{0.25cm}
+
+
+La plus ancienne méthode de conservation des aliments pratiquée par l'homme est la déshydratation.
+Ce procédé consiste à utiliser une source de chaleur pour faire évaporer de l'eau d'un aliment.
+
+Dans tout l'exercice, on s'intéresse à un abricot frais placé dans un séchoir pour le déshydrater.
+Avant déshydratation, cet abricot frais a une masse de \np[g]{45}  dont 85\,\% d'eau. Le processus de
+déshydratation s'achève lorsque cet abricot a une masse de \np[g ]{9} dont 25\,\% d'eau, il bénéficie alors de
+l'appellation \og abricot sec \fg.
+\begin{enumerate}
+\item  Calculer la masse d'eau contenue dans cet abricot frais.
+\item Vérifier que cet abricot ayant l'appellation \og abricot sec\fg{} ne contient plus que \np[g]{2.25}  d'eau.
+\end{enumerate}
+
+Soit $f$ la fonction qui, à toute durée $t$ exprimée en heures, associe la masse d'eau (en grammes)
+contenue dans cet abricot placé dans le séchoir depuis $t$ heures. On admet que pour tout réel $t$ de
+l'intervalle [0,13], $f(t) = 38,25\text{e}^{-0,26t}$. En annexe 1, on a tracé la courbe représentative $\mathcal{C}$ de la
+fonction $f$.
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item  Calculer la masse d'eau présente dans cet abricot après deux heures passées dans le
+séchoir. On arrondira à $10^{-2}$ g.
+\item Si on laisse cet abricot dans le séchoir pendant 8 heures, pourra-t-il bénéficier de
+l'appellation \og abricot sec\fg{} ? Justifier votre réponse.
+\item Déterminer le temps de séchage nécessaire pour que l'abricot placé dans le séchoir puisse
+bénéficier de l'appellation \og abricot sec \fg. On donnera le résultat à la minute près.
+\end{enumerate}
+\item On considère maintenant la totalité du processus de déshydratation qui permet de passer de
+l'abricot frais, contenant 38,25 g d'eau, à l'abricot ayant l'appellation \og abricot sec \fg,
+contenant \np[g]{2.25} d'eau.
+
+Camille affirme : \og dans ce processus, le temps nécessaire pour éliminer les 5 derniers
+grammes d'eau est environ 15 fois le temps nécessaire à l'élimination des 5 premiers
+grammes d'eau! \fg.
+
+Cette affirmation est-elle exacte? Justifier. On pourra utiliser la représentation graphique de
+l'annexe 1 (dans ce cas, on rendra l'annexe 1 avec la copie et on laissera les traits de
+construction nécessaires apparents).
+
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{\textsc{Exercice 2} \hfill 4 points}
+
+\vspace{0.5cm}
+
+
+Un fabricant a mis au point une machine permettant de fabriquer des blocs de glace (utilisables sur
+les bateaux de pêche par exemple). L'épaisseur des blocs de glace fabriqués dépend du temps de
+congélation.
+
+On obtient le tableau ci-dessous :
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|m{5.5cm}|*{7}{>{\centering \arraybackslash}X|}}
+\hline 
+
+Temps $t_i$ de
+congélation(en heures)& 1& 2& 4 &8& 12 &18& 26\\\hline
+
+Épaisseur $y_i$ de la
+glace(en cm) &4 &8 &11& 16,5& 20,5& 24,5& 28,5\\\hline
+\end{tabularx}
+
+\medskip
+
+On pose $x_i=\ln t_i$.
+\begin{enumerate}
+\item  Recopier et compléter le tableau ci-dessous. Les valeurs seront arrondies au dixième.
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|m{5cm}|*{7}{>{\centering \arraybackslash}X|}}
+\hline 
+
+\centering $x_i$& & &  &&  && \\\hline
+
+Épaisseur $y_i$ de la
+glace(en cm) &4 &8 &11& 16,5& 20,5& 24,5& 28,5\\\hline
+\end{tabularx}
+
+
+\item Représenter le nuage de points de coordonnées ($x_i ,y_i$) dans le repère orthogonal fourni à
+\textbf{l'annexe} 2, qui est \textbf{à rendre avec la copie.}
+\item À l'aide de la calculatrice, donner une équation de la droite d'ajustement $(d)$ de $y$ en $x$
+obtenue par la méthode des moindres carrés sous la forme $y = ax + b$ où les coefficients $a$ et
+$b$ seront arrondis à $10^{-2}$.
+\end{enumerate}Pour la suite, on prend comme modèle d'ajustement, la droite $(d)$ d'équation $y = 7,4x + 2,5$.
+\begin{enumerate}[resume]
+\item Tracer cette droite $(d)$ dans le repère de l'\textbf{annexe 2}.
+\item Déterminer, selon le modèle d'ajustement pris, et à l'heure près, le temps nécessaire pour
+fabriquer un bloc de glace de \np[cm]{32}  d'épaisseur.
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{\textsc{Exercice 3} \hfill 6 points}  
+
+\vspace{0.5cm}
+
+
+Une colonie de bactéries est mise en culture avec du glucose.
+
+Pendant la 1\iere période de 10 minutes, la masse de glucose absorbé par la colonie de bactéries est
+égale à 18,3 femtogrammes (1 gramme est égal à $10^{15}$ femtogrammes).
+
+Pendant la $2\ieme$ période de 10 minutes, la masse de glucose absorbé par la colonie de bactéries
+augmente de 26\,\% par rapport à la masse de glucose absorbé pendant la $1\iere$ période.
+\begin{enumerate}
+\item  Justifier que la masse de glucose absorbé pendant la $2\ieme$ période de 10 minutes est égale à
+23,058 femtogrammes.
+\end{enumerate}
+Dans la suite, on étudie l'évolution de la masse de glucose absorbé par la colonie de bactéries en
+prenant le modèle suivant:
+\begin{itemize}
+\item  pour tout entier naturel $n$ supérieur ou égal à 1, on note $u_n$ la masse, en femtogrammes, de
+glucose absorbé pendant la n-ième période de 10 minutes ;
+\item pour tout entier naturel $n$ supérieur ou égal à 1, la masse de glucose $u_{n+1}$ absorbé par la
+colonie de bactéries pendant la ($n$+1)-ième période de 10 minutes augmente de 26\,\% par
+rapport à la masse de glucose $u_n$ absorbé pendant la $n$-ième période de 10 minutes précédente.
+\end{itemize}
+\begin{enumerate}[resume]
+\item 
+\begin{enumerate}
+\item Préciser les valeurs de $u_1$ et $u_2$.
+\item Quelle est la nature de la suite $\left(u_n\right)$ ? Justifier votre réponse.
+\item Pour tout entier naturel $n$ supérieur ou égal à 1, exprimer $u_n$ en fonction de $n$.
+\item Calculer la masse de glucose absorbé pendant la $7\ieme$ période de 10 minutes. On donnera un
+résultat arrondi à 0,1 femtogramme.
+\end{enumerate}
+\item On considère l'algorithme suivant:
+
+\medskip
+\begin{center}
+
+
+
+\begin{tabular}[]{|l|}
+\hline
+$n\longleftarrow  1$\\
+$u \longleftarrow  18,3$\\
+Tant que $u \leqslant 100$\\
+\hspace{2em}$n\longleftarrow n+1$\\
+\hspace{2em}$u \longleftarrow 1,26\times u$\\
+Fin Tant que\\
+\hline
+\end{tabular}
+\end{center}
+
+\medskip
+
+Quelle est la valeur de la variable $n$ à la fin de l'exécution de l'algorithme ? Interpréter ce résultat
+dans le contexte de l'exercice.
+\end{enumerate}
+
+Dans la suite de l'exercice, on s'intéresse à la masse totale de glucose absorbé depuis le début de la
+mise en culture. Dans ce cadre, on exploite la feuille de calcul suivante obtenue à l'aide d'un
+tableur:
+
+\begin{center}
+\begin{tabularx}{0.5\linewidth}{|c|*{3}{>{\centering \arraybackslash}X|}}
+\hline 
+& A& B&  C \\\hline
+1&  $n$& $u_n$& $S_n$\\\hline
+2& 1& 18,3& 18,3\\\hline
+3& 2& 23,058& 41,358\\\hline
+4& 3& 29,05308& 70,41108\\\hline
+5& 4& 36,6068808& 107,017961\\\hline
+6& 5& 46,1246698& 153,142631\\\hline
+\end{tabularx}
+\end{center}
+
+
+\begin{enumerate}[resume]
+\item  \begin{enumerate}
+		\item  Interpréter la valeur de la cellule C4 dans le contexte de l'exercice.
+		\item Quelle formule a été entrée dans la cellule C3 pour obtenir, par recopie vers le bas, les
+		valeurs suivantes de la colonne C ?
+		\end{enumerate}
+\item Déterminer le nombre d'heures nécessaire, depuis le début de la mise en culture, à l'absorption
+de 1 gramme de glucose par la colonie de bactéries (on rappelle que 1 gramme est égal à
+$10^{15}$ femtogrammes).
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\textbf{\textsc{Exercice 4} \hfill 6 points}
+
+\vspace{0.5cm}
+
+
+\emph{Les trois parties sont indépendantes.}
+
+\vspace{0.5cm}
+
+Dans une ville, un cardiologue s'intéresse à la tension artérielle (systolique), mesurée en millimètres
+de mercure (mmHg), des femmes de plus de 60 ans.
+
+\medskip
+
+\textbf{Partie A}
+
+\medskip
+
+On note $T$ la variable aléatoire qui, à chaque dossier médical d'une femme de la ville de plus de
+60 ans, associe la tension artérielle de cette femme mesurée en mmHg. On suppose que $T$ suit la loi
+normale d'espérance \textmu = 134 et d'écart-type $\sigma = 8,5$.
+\begin{enumerate}
+\item  Le cardiologue choisit au hasard le dossier médical d'une femme de plus de 60 ans parmi les
+dossiers médicaux des femmes de la ville.
+\begin{enumerate}
+\item  Quelle est la probabilité que la tension artérielle de cette femme soit comprise entre
+130 et \np [mmHg]{140} ? On donnera la valeur arrondie au millième.
+\item Quelle est la probabilité que la tension artérielle de cette femme soit supérieure à
+ \np [mmHg]{140} ? On donnera la valeur arrondie au millième.
+\end{enumerate}
+\item Donner un nombre entier $h$ tel que $P(134 - h \leqslant T \leqslant 134 +h)\approx 0,95$ (à $10^{-2}$ près). Interpréter
+cette probabilité dans le contexte de l'exercice.
+\end{enumerate}
+
+\medskip
+
+\textbf{Partie B}
+
+\medskip
+
+On admet que 24\,\% des femmes de plus de 60 ans de la ville étudiée sont atteintes d'hypertension
+artérielle. On constitue au hasard un échantillon composé de 7 dossiers médicaux de femmes de plus
+de 60 ans dans la ville étudiée. Le nombre total de dossiers médicaux de femmes de plus de 60 ans
+dans cette ville est suffisamment élevé pour que l'on puisse assimiler ce prélèvement à un tirage avec
+remise. On note $X$ la variable aléatoire qui prend pour valeurs le nombre de dossiers médicaux de
+femmes atteintes d'hypertension artérielle dans un échantillon de 7 dossiers médicaux.
+
+\begin{enumerate}
+\item  Quelle est la loi suivie par $X$? En donner les paramètres.
+\item  On donne ci-dessous la représentation graphique de la loi suivie par $X$ (en abscisses, on lit les
+valeurs prises par $k$ et en ordonnées, les valeurs prises par $P(X = k))$ :
+
+\medskip
+
+\begin{center}
+\psset{xunit=1.2cm,yunit=14cm, comma=true}
+\begin{pspicture}(-0.5,-0.05)(9,0.35)
+\multido{\n=0+0.01}{37}{\psline[linewidth=0.75pt,linecolor=lightgray](0,\n)(8,\n)}
+\multido{\n=0+0.05}{8}{\psline[linewidth=1pt,linecolor=gray](0,\n)(8,\n)}
+\psaxes[linewidth=1pt,Dy=0.05,labels=y]{-}(0,0)(-0.001,-0.0001)(8.2,0.36)
+\uput[d](0.5,-0.01){0}\uput[d](1.5,-0.01){1}\uput[d](2.5,-0.01){2}\uput[d](3.5,-0.01){3}\uput[d](4.5,-0.01){4}\uput[d](5.5,-0.01){5}\uput[d](6.5,-0.01){6}
+\uput[d](7.5,-0.01){7}\uput[l](0,0){0}
+\psframe[fillstyle=solid,fillcolor=gray](0.35,0)(0.65,0.1464)
+\psframe[fillstyle=solid,fillcolor=gray](1.35,0)(1.65,0.3237)
+\psframe[fillstyle=solid,fillcolor=gray](2.35,0)(2.65,0.3067)
+\psframe[fillstyle=solid,fillcolor=gray](3.35,0)(3.65,0.1614)
+\psframe[fillstyle=solid,fillcolor=gray](4.35,0)(4.65,0.051)
+\psframe[fillstyle=solid,fillcolor=gray](5.35,0)(5.65,0.0097)
+\end{pspicture}
+
+\end{center}
+\begin{enumerate}
+\item  À l'aide du graphique, déterminer une valeur approchée à 0,01 près de la probabilité pour
+qu'il y ait au moins 4 dossiers médicaux de femmes atteintes d'hypertension artérielle
+dans un échantillon de 7 dossiers médicaux. On détaillera la démarche.
+
+\item Expliquer ce qui se passe sur la représentation graphique pour $X = 6$ et $X = 7$ .
+\end{enumerate}
+\end{enumerate}
+
+\medskip
+
+\textbf{Partie C}
+
+\medskip
+
+Un centre hospitalier universitaire souhaite comparer l'efficacité de deux régimes alimentaires
+distincts, notés A et B, destinés à réduire l'hypertension artérielle dans la population des femmes de
+plus de 60 ans de la ville.
+Il constitue, au hasard, deux groupes de 200 femmes de plus de 60 ans de la ville souffrant
+d'hypertension artérielle:
+
+\begin{itemize}
+\item [--] après avoir suivi le régime A, 15 femmes du premier groupe de 200 femmes n'ont pas de
+réduction de leur hypertension artérielle ;
+\item [--]après avoir suivi le régime B, 50 femmes du second groupe de 200 femmes n'ont pas de
+réduction de leur hypertension artérielle.
+\end{itemize}
+En exploitant la notion d'intervalle de confiance, peut-on parler de différence significative
+d'efficacité entre les deux régimes alimentaires en termes de réduction d'hypertension artérielle?
+
+
+\newpage
+
+\begin{landscape}
+\begin{center}
+\textbf{Annexe 1 (exercice 1): courbe représentative $\mathcal{C}$ de la fonction $f$}\\
+À rendre avec la copie.
+\end{center}
+\psset{xunit=1.6cm,yunit=0.25cm}
+\begin{pspicture}(-1.25,-5)(13.5,40)
+\multido{\n=-1+0.25}{57}{\psline[linewidth=0.75pt,linecolor=lightgray](\n,-4)(\n,39)}
+\multido{\n=0+1}{14}{\psline[linewidth=1pt,linecolor=gray](\n,-4)(\n,39)}
+\multido{\n=-4+1}{43}{\psline[linewidth=0.75pt,linecolor=lightgray](-1,\n)(13,\n)}
+\multido{\n=0+5}{8}{\psline[linewidth=1pt,linecolor=gray](-1,\n)(13,\n)}
+\psaxes[linewidth=0.95pt,,Dy=5,]{->}(0,0)(-1,-4)(13.4,39)
+\psplot[linewidth=1pt,linecolor=blue,plotpoints=5000]{0}{13}{ 2.71828 x 0.26 neg mul exp 38.25 mul }
+\end{pspicture}
+\end{landscape}
+
+\newpage
+
+\begin{landscape}
+\begin{center}
+\textbf{Annexe 2 (exercice 2):pour la représentation graphique}  \\
+À rendre avec la copie.
+\end{center}
+\psset{xunit=5.5cm,yunit=0.3cm,comma=true}
+\begin{pspicture}(-0.25,-1)(4.25,40)
+\multido{\n=-0.1+0.1}{43}{\psline[linewidth=0.75pt,linecolor=lightgray](\n,-2)(\n,37)}
+\multido{\n=0+1}{5}{\psline[linewidth=1pt,linecolor=gray](\n,-0.5)(\n,37)}
+\multido{\n=-2+1}{40}{\psline[linewidth=0.75pt,linecolor=lightgray](-0.2,\n)(4.1,\n)}
+\multido{\n=0+5}{8}{\psline[linewidth=1pt,linecolor=gray](-0.1,\n)(4.1,\n)}
+\psaxes[linewidth=0.95pt,Dx=0.5,Dy=5,]{->}(0,0)(-0.1,-2)(4.2,37)
+\uput[dl](0,0){0}
+\end{pspicture}
+\end{landscape}
+\end{document}

@@ -1,0 +1,314 @@
+\documentclass[10pt,a4paper,french]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage{xspace}
+\usepackage[scaled=0.875]{helvet}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,amstext,makeidx}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{pifont}
+\usepackage[euler]{textgreek}
+\usepackage{textcomp,enumitem}
+\usepackage[table]{xcolor}
+\usepackage{lscape,rotating}
+\usepackage{graphicx}
+%tapuscrit Jean-Claude Souque
+\newcommand{\euro}{\eurologo{}}
+\usepackage{pst-tree,pst-plot,pst-text,pst-eucl,pst-bar,pst-func,pst-math,pstricks-add}
+\usepackage[squaren, Gray, cdot]{SIunits}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\usepackage[left=3.5cm, right=3.5cm, top=1.9cm, bottom=2.7cm]{geometry}
+\newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O}~;~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O}~;~\vect{u},~\vect{v}\right)$}
+\usepackage{fancyhdr}
+\makeatletter
+\def\hlinewd#1{%
+\noalign{\ifnum0=`}\fi\hrule \@height #1 %
+\futurelet\reserved@a\@xhline}
+\makeatother
+
+\usepackage[dvips]{hyperref}
+\hypersetup{%
+pdfauthor = {APMEP},
+pdfsubject = {Baccalauréat STL biotechnologies},
+pdftitle = {Métropole - 6 septembre 2018},
+allbordercolors = white,
+pdfstartview=FitH}
+
+\usepackage{babel}
+\usepackage[np]{numprint}
+\renewcommand\arraystretch{1.2}
+\newcommand{\e}{\text{e}}
+\frenchbsetup{StandardLists=true}
+\begin{document}
+\setlength\parindent{0mm}
+
+\rhead{\textbf{A. P{}. M. E. P{}.}}
+\lhead{\small Baccalauréat  Sciences et Technologies de laboratoire (STL)spécialité Biotechnologies}
+\lfoot{\small{métropole}}
+\rfoot{\small{6 septembre 2018}}
+\pagestyle{fancy}
+\thispagestyle{empty}
+\begin{center}{\Large \textbf{\decofourleft~Baccalauréat STL spécialité biotechnologies  Métropole~\decofourright\\[5pt] 6 septembre  2018}}
+\end{center}
+
+\vspace{0,25cm}
+ 
+\textbf{\textsc{Exercice 1} \hfill (6 points)}  
+
+\vspace{0.25cm}
+
+\emph{Dans cet exercice, les résultats seront arrondis à l’unité, sauf mention contraire.}
+
+\medskip
+
+Cyprien et Cloé, élèves de Terminale STL Biotechnologies, s’intéressent au protocole d’un examen
+d’imagerie médicale, qui nécessite de préparer une dose de produit radioactif. Ils disposent du tableau
+suivant, qui donne le nombre de milliards de noyaux radioactifs présents dans le produit préparé en
+fonction du temps $t$, exprimé en minutes.
+
+\smallskip
+\begin{center}
+
+\begin{tabularx}{\linewidth}{|m{4cm}|*{7}{>{\centering \arraybackslash}X|}}
+\hline
+Temps en minutes : $t_i$ 		&0 			&20		& 40		& 60	& 80		& 100		& 120\\\hline
+Nombre de milliards
+de noyaux radioactifs : $y_i$	&\np{8000}&\np{7400}&\np{6800} & \np{6300}&\np{5800} &\np{5400} & \np{4900}\\\hline
+\end{tabularx}
+
+\end{center}
+\smallskip 
+
+Au moment de son injection au patient, le produit ne doit pas contenir plus de \np{2600} milliards de noyaux
+radioactifs. Cyprien et Cloé souhaitent alors déterminer combien de temps, une fois le produit prêt, il
+faut attendre avant de l’injecter au patient.
+\medskip
+
+\textbf{Partie A}
+
+\medskip
+
+Cyprien propose d’utiliser un ajustement affine.
+
+\medskip
+
+\begin{enumerate}
+\item  Représenter le nuage de points de coordonnées $(t_i , y_i)$ dans le repère fourni en \textbf{annexe, à rendre avec la copie}. Dans ce repère, 1 unité est égale à 20 minutes en abscisse et à 200 milliards de noyaux
+radioactifs en ordonnée.
+\item Déterminer, à l’aide de la calculatrice, une équation de la droite d’ajustement de $y$ en $t$ par la
+méthode des moindres carrés. On la mettra sous la forme $y = at + b$, les réels $a$ et $b$ étant arrondis à $0,1$.
+\item Cyprien admet que pendant les quatre heures suivant la préparation du produit, le nombre $y$ de
+milliards de noyaux radioactifs encore présents dans le produit peut être modélisé par
+$y= -26 t + \np{7900}$ où $t$ est le temps, exprimé en minutes, écoulé depuis que le produit a été préparé.
+\begin{enumerate}
+\item Tracer la droite $d$ d’équation $y = -26 t + \np{7 900}$ sur le graphique précédent.
+\item Cyprien utilise alors ce modèle pour déterminer, combien de temps, une fois le produit prêt, il
+faut attendre avant de l’injecter au patient. Quel temps Cyprien trouve-t-il ?
+\item Une nouvelle mesure est fournie à Cyprien : au bout de 240 minutes, le nombre de milliards de
+noyaux radioactifs présents dans le produit préparé est égal à \np{3100}. Cette mesure remet-elle en
+cause le modèle utilisé par Cyprien ? Pourquoi ?
+\end{enumerate}
+\end{enumerate}
+
+\medskip
+
+\textbf{Partie B}
+
+\medskip
+
+Cloé remet en cause le modèle utilisé par Cyprien. L’examen exploitant un produit radioactif,  elle
+préfère utiliser un ajustement exponentiel : le nombre $y$ de milliards de noyaux radioactifs encore
+présents dans le produit peut être modélisé par  $y= A_0\e^{-k t} $ où $t$ est le temps, exprimé en minutes, écoulé
+depuis que le produit a été préparé, $A_0$ et $k$ étant deux réels strictement positifs.
+
+\medskip
+
+\begin{enumerate}
+\item Proposer une démarche qui permette de déterminer des valeurs prises par les réels $A_0$ et $k$.
+\item Dans ce qui suit, on prend $A_0 = \np{8000}$ et $k = \np{0,0039}$.
+
+Cloé utilise alors ce modèle pour déterminer, combien de temps, une fois le produit prêt, il faut
+attendre avant de l’injecter au patient. Quel temps Cloé trouve-t-elle ?
+\end{enumerate}
+
+\vspace{0,25cm}
+
+\textbf{\textsc{Exercice 2} \hfill (7 points)}  
+
+\vspace{0.25cm}
+
+\emph{Les deux parties de cet exercice peuvent se traiter de façon indépendante.}
+
+\medskip
+
+\textbf{Partie A}
+
+\medskip
+
+En 2017, une étude menée dans une ville a montré que la consommation d’eau par an et par habitant
+s’élevait à \np[m^3]{50}. On suppose que, dans les années qui suivront, cette consommation baissera
+de 2,1\,\% par an.
+
+\medskip
+
+\begin{enumerate}
+\item  On considère l’algorithme suivant :
+\begin{center}
+\begin{tabular}[]{|m{1cm} m{3cm}|}
+\hline
+&$n\leftarrow 0$\\
+&$u\leftarrow 50$\\
+&Tant que $u > 47$\\
+&$u\leftarrow  u \times 0,979$\\
+&$n \leftarrow n+1$\\
+&Fin Tant que\\
+&$n\leftarrow n + 2017$\\
+\hline
+\end{tabular}
+\end{center}
+
+	\begin{enumerate}
+		\item Quelle est la valeur de la variable $n$ à la fin de l’exécution de l’algorithme ?
+		\item Interpréter ce résultat en termes de consommation d’eau par an et par habitant dans cette ville.
+	\end{enumerate}
+\item On modélise la situation par une suite ($u_n)$ où $u_n$ représente la consommation d’eau, en m$^3$, par an et par habitant, dans cette ville en $2017 + n$.
+	\begin{enumerate}
+		\item Montrer que la suite $\left(u_n\right)$ est géométrique. Préciser son premier terme et sa raison.
+		\item Exprimer, pour tout entier naturel $n$, $u_n$ en fonction de $n$. 
+		\item Avec ce modèle, quelle consommation d’eau peut-on prévoir par an et par habitant en 2021 ?
+
+On arrondira à \np[m^3]{0,1}.
+\end{enumerate}
+\item On s’intéresse à la consommation totale d’eau par habitant depuis le début de l’année 2017.
+
+Déterminer à partir de quelle année cette consommation totale d’eau dépassera \np[m^3]{500}.
+\end{enumerate}
+
+\medskip
+
+\textbf{Partie B}
+
+\medskip
+
+\emph{Dans cette partie, les probabilités demandées seront arrondies à $10^{-4}$.}
+
+\medskip
+
+On sait qu’en 2017, 37\,\% des logements de la ville étaient équipés de systèmes de réduction de la
+consommation d’eau (robinets mousseurs, récupérateurs d’eau de pluie, $\dots$).
+
+\medskip
+
+\begin{enumerate}
+\item On considère un échantillon de \np{1 000} logements pris au hasard parmi les logements de la ville,
+suffisamment nombreux pour assimiler le choix de cet échantillon à un tirage avec remise. On note
+$X$ la variable aléatoire égale au nombre de logements de l’échantillon qui étaient équipés de
+systèmes de réduction de la consommation d’eau en 2017.
+	\begin{enumerate}
+		\item Déterminer la loi suivie par la variable aléatoire X. Préciser les paramètres de cette loi.
+		\item Quelle est la probabilité qu’il y ait plus de 400 logements dans l’échantillon qui étaient
+équipés de tels systèmes de réduction de la consommation d’eau en 2017 ?
+	\end{enumerate}
+\item On décide d’approcher la variable aléatoire $X$ par une variable aléatoire $Y$ qui suit la loi normale de
+paramètres \textmu = 370 et \textsigma = 15,27.
+	\begin{enumerate}
+		\item Justifier les valeurs choisies pour \textmu{} et \textsigma.
+		\item Calculer la probabilité $P(Y \leqslant 350)$. Interpréter le résultat obtenu dans le contexte.
+	\end{enumerate}
+\end{enumerate}
+
+\vspace{0,25cm}
+
+\textbf{\textsc{Exercice 3} \hfill (7 points)}  
+
+\vspace{0.25cm}
+
+\emph{Les deux parties de cet exercice sont indépendantes.}
+
+\medskip
+
+Un antibiotique est une substance chimique organique inhibant ou tuant des bactéries pathogènes.
+
+\medskip
+
+\textbf{Partie A}
+
+\medskip
+
+Un laboratoire affirme que 48\,\% de toutes les souches bactériennes sont résistantes aux antibiotiques.
+
+Dans un échantillon de 50 souches bactériennes prises au hasard, on constate que 29 souches sont
+résistantes. Cela remet-il en cause l’affirmation du laboratoire ? Justifier.
+
+\medskip
+
+\textbf{Partie B}
+
+\medskip
+
+On injecte un antibiotique à un patient. On modélise cette situation par une fonction $f$ qui, à tout temps $t$,
+exprimé en heures, écoulé depuis l’injection, associe la concentration, exprimée en mg$\cdot \text{L}^{-1}$, de
+l’antibiotique dans le sang du patient.
+
+Cette fonction $f$ est définie sur l’intervalle $[0, +\infty[$ par 
+
+\[f (t)=\dfrac{8t}{t^2+1}.\]
+
+\begin{enumerate}
+\item  On admet que la limite de la fonction $f$ en $+\infty$ est égale à 0.
+	\begin{enumerate}
+		\item Interpréter la valeur de la limite pour la courbe représentative de la fonction $f$.
+		\item Interpréter la valeur de la limite dans le contexte de l’exercice.
+	\end{enumerate}
+\item On note $f'$ la fonction dérivée de la fonction $f$.
+	\begin{enumerate}
+		\item On admet que pour tout réel $t$ positif ou nul, on a :$f'(t)=\dfrac{8(1- t)(1+ t)}{(t^2+1)^2}$.
+
+Étudier le signe de $f'$ sur $[0~,~+\infty[$ et en déduire le tableau de variations de $f$.
+		\item Au bout de combien de temps après l’injection la concentration de l’antibiotique est-elle
+maximale ? Préciser cette concentration maximale en mg$\cdot \text{L}^{-1}$.
+	\end{enumerate}
+\item En antibiothérapie, on définit la CMI comme la concentration minimale d’antibiotique permettant
+d’empêcher la multiplication bactérienne. La CMI de l’antibiotique injecté est égale à 2,4 mg$\cdot \text{L}^{-1}$.
+	\begin{enumerate}
+		\item Montrer que, pour tout réel $t$ positif ou nul, $f(t) - 2,4 =\dfrac{-2,4t^2+8t-2,4}{t^2+1}$.
+		\item Étudier le signe de cette expression sur l’intervalle $[0~,~+\infty[$.
+		\item Montrer que la concentration de l’antibiotique injecté est supérieure à sa CMI pendant 2 h 40.
+	\end{enumerate}
+\item
+	\begin{enumerate}
+		\item Vérifier que la fonction $F$ définie sur $[0~,~+\infty[$ par $F(t)= 4 \ln( t^2+1)$ est une primitive de $f$ sur cet intervalle.
+		\item En déduire la valeur exacte de l’intégrale $\displaystyle J=\int_0^{12} f(t)\mathrm{d}t$.
+		\item On admet que la valeur moyenne de la concentration de l’antibiotique en mg$\cdot\text{L}^{-1}$ durant les douze premières heures après l’injection est égale à $ \dfrac{1}{12}J$.
+
+Déterminer cette valeur moyenne, arrondie au centième de mg$\cdot \text{L}^{-1}$.
+	\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\rotatebox{90}{
+\psset{xunit=0.075cm,yunit=0.0025cm,labelFontSize=\scriptstyle,arrowsize=2pt 3}
+\begin{pspicture}(-15,-700)(280,3200)
+ \multido{\n=0+20}{13}{\psline[linewidth=0.75pt,linecolor=lightgray](\n,-2600)(\n,3000)}
+ \multido{\n=-2600+100}{57}{\psline[linewidth=0.75pt,linecolor=lightgray](0,\n)(260,\n)}
+ \psaxes[linewidth=0.95pt,Dx=20,Oy=5000,Dy=200,]{->}(0,0)(0,-2600)(260,3100)
+\uput[u](120,3200){\textbf{\textsc{Exercice} 1: annexe à rendre avec la copie}}
+\end{pspicture}
+}
+\end{document}
